@@ -4,7 +4,8 @@
 Dieses Programm implementiert das Spiel "Mensch Ärgere Dich Nicht" mit Hilfe der Processing-Bibliothek in Java. Es wird von einem MVC (Model-View-Controller)-Architekturmuster angetrieben.
 Mensch Ärgere Dich Nicht ist eine digitale Umsetzung des beliebten Brettspiels 
 "Mensch Ärgere Dich Nicht". Das Spiel bietet ein unterhaltsames und herausforderndes Spielerlebnis für bis zu vier Spieler. Jeder Spieler hat vier Spielfiguren,
-die er sicher in die Endzone bewegen muss, um zu gewinnen.
+die er sicher in die Endzone bewegen muss, um zu gewinnen. Bei dem normalen Spiel ist es so, dass man zweimal
+würfeln kann, wenn man seinen Figure nicht bewegen kann. Hier ist es aber so, dass man nur ein Mal würfeln kann.
 
  ## Features 
 **Vier Spieler:** Spiele mit bis zu vier Freunden oder Computergegnern.

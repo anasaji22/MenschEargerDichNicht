@@ -329,12 +329,8 @@ public class Model implements IModel {
      */
 
     public boolean canMovePokemonToBox(int diceNumber, Box relatedBox, Pokemon pokemon) {
-        if (getCurrentPlayer().getListOfPokemons().stream().anyMatch(p -> p.getBox().equals(relatedBox))) {
-            return false;
-        }
-        if (diceNumber == 6 && !pokemon.isAlive() && relatedBox.boxId() == getCurrentPlayerBoard()[0]) {
-            return true;
-        }
+        if (getCurrentPlayer().getListOfPokemons().stream().anyMatch(p -> p.getBox().equals(relatedBox))) {return false;}
+        if (diceNumber == 6 && !pokemon.isAlive() && relatedBox.boxId() == getCurrentPlayerBoard()[0]) {return true;}
         var indexOfPokemonBox = findIndex(getCurrentPlayerBoard(), pokemon.getBoxNumber());
         return pokemon.isAlive() && indexOfPokemonBox + diceNumber < getCurrentPlayerBoard().length && getCurrentPlayerBoard()[indexOfPokemonBox + diceNumber] == relatedBox.boxId();
     }
@@ -490,7 +486,6 @@ public class Model implements IModel {
      *
      */
     public Box getAvailableBox(int diceNumber, Pokemon pokemon) {
-
         if (pokemon != null) {
             if (diceNumber == 6 && !pokemon.isAlive() && !getCurrentPlayer().getListOfPokemons().stream().anyMatch(p -> p.getBox().equals(boxMap.get(getCurrentPlayerBoard()[0])))) {
                 return boxMap.get(getCurrentPlayerBoard()[0]);
@@ -620,9 +615,7 @@ public class Model implements IModel {
      *  Die Methode wird in dem Model und in den Controller benutzt.
      */
 
-    public PlayerTurn getNextPlayer() {
-        return PlayerTurn.values()[(playerTurn.ordinal() + 1) % PlayerTurn.values().length];
-    }
+    public PlayerTurn getNextPlayer() {return PlayerTurn.values()[(playerTurn.ordinal() + 1) % PlayerTurn.values().length];}
     /**
      * Gibt die Map der Spielfeld-Boxen zurück.
      *
@@ -646,9 +639,7 @@ public class Model implements IModel {
      * <p>
      * Die Methode wird in dem Model und in den Controller benutzt.
      */
-    public ArrayList<RealPlayer> getRealPlayersList() {
-        return realPlayersList;
-    }
+    public ArrayList<RealPlayer> getRealPlayersList() {return realPlayersList;}
 
     /**
      * Setzt den aktuellen Zug (Spieler).
